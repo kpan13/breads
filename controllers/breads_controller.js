@@ -12,7 +12,8 @@ breads.get('/:arrayIndex', (req, res) => {
 breads.get('/', (req, res) => {
   res.render('Index',
     {
-      breads: Bread
+      breads: Bread,
+      title: 'Index Page'
     }
   )
 // res.send(Bread)
