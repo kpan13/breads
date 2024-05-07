@@ -19,9 +19,26 @@ function Index({breads, title}) {
             })
           }
         </ul>
+        <div className="newButton">
+          <a href="/breads/new"><button>Add a new bread</button></a>
+        </div>
+
       </Default>
     )
 }
+// CREATE
+breads.post('/', (req, res) => {
+  console.log(req.body)
+  if(req.body.hasGluten === 'on') {
+    req.body.hasGluten = 'true'
+  } else {
+    req.body.hasGluten = 'false'
+  }
+  Bread.push(req.body)
+  res.redirect('/breads')
+})
+
+
 
 
 
