@@ -9,9 +9,11 @@ breads.get('/:arrayIndex', (req, res) => {
       bread:Bread[req.params.arrayIndex]
     })
   } else {
-    res.render('error404')
+    res.send('404')
   }
 })
+
+
  // INDEX
   breads.get('/', (req, res) => {
   res.render('Index',
