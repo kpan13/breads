@@ -9,9 +9,10 @@ breads.get('/:arrayIndex', (req, res) => {
       bread:Bread[req.params.arrayIndex]
     })
   } else {
-    res.send('404')
+    res.render('404')
   }
 })
+
 
 
  // INDEX
@@ -25,7 +26,7 @@ breads.get('/:arrayIndex', (req, res) => {
 // res.send(Bread)
 })
 
-// CREATE
+
 // CREATE
 breads.post('/', (req, res) => {
   if (!req.body.image) {
@@ -40,13 +41,9 @@ breads.post('/', (req, res) => {
   res.redirect('/breads')
 })
 
-
 // NEW
 breads.get('/new', (req, res) => {
   res.render('new')
 })
-
-
-
 
 module.exports = breads
