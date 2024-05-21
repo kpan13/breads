@@ -10,7 +10,7 @@ module.exports = breads
 
 // CONFIGURATION
 require('dotenv').config()
-const PORT = process.env.PORT
+const PORT = process.env.PORT ||3000;
 const app = express()
 
 // ROUTES
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
   // 404 Page
 app.get('*', (req, res) => {
-  res.send('error404')
+  res.send('404')
 })
 
   
